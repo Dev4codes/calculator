@@ -2,80 +2,103 @@ import React,{useState} from "react";
 import "./style.css";
 
 export default function App() {
-  const [result,setResult]=useState("0");
+  const [curval,setCurval]=useState("0");
   const [inp1,setInp1]=useState("");
-  const [display,setDisplay]=useState("0");
+  const [display,setDisplay]=useState("0")
+  const [result,setResult]=useState("");
+ 
   const [operator,setOperator]=useState();
  
   
   
   const one=()=>{
-    
-    setResult(result+1);
+    setCurval(curval+1);
+    setDisplay(display+1)
+   
   }
   const two=()=>{
-    setResult(result+2);
+    setCurval(curval+2);
+    setDisplay(display+2)
    } 
    const three=()=>{
-    setResult(result+3);
+    setCurval(curval+3);
+    setDisplay(display+3)
    }
    const four=()=>{
-    setResult(result+4);
-   } 
+    setCurval(curval+4);
+    setDisplay(display+4)
+   }
    const five=()=>{
-    setResult(result+5);
-   } 
+    setCurval(curval+5);
+    setDisplay(display+5)
+   }
    const six=()=>{
-    setResult(result+6);
-   } 
+    setCurval(curval+6);
+    setDisplay(display+6)
+   }
    const seven=()=>{
-    setResult(result+7);
+    setCurval(curval+7);
+    setDisplay(display+7)
    }
    const eight=()=>{
-    setResult(result+8);
-   }  
+    setCurval(curval+8);
+    setDisplay(display+8)
+   }
    const nine=()=>{
-    setResult(result+9);
-   } 
+    setCurval(curval+9);
+    setDisplay(display+9)
+   }
    const zero=()=>{
-    setResult(result+0);
+    setCurval(curval+0);
+    setDisplay(display+0)
    } 
 
   const displayresult=()=>{
+    const input2=(parseInt(curval));
    
-    if(operator== "+"){
+    console.log(inp1+input2)
+    setDisplay(display+" = ") 
       
-      setResult(parseInt(result)+inp1);
-      
-      
-    }
-    else if(operator=="-"){
-      setResult(inp1-parseInt(result));
-    }
-    else {
-      setResult((inp1)/parseInt(result));
-    }
+      if(operator=="+"){
+        setResult(input2+inp1)
+      }
+      else if(operator=="-"){
+        setResult(inp1-input2)
+      }
+      else if(operator=="*"){
+        setResult(inp1*input2)
+      }
+      else if(operator=="/"){
+        setResult(inp1/input2)
+      }
+    
+    
     
     
   
-    setDisplay(inp1+"+"+result+"=");
+    
     
   } 
   const clear=()=>{
-    setResult("0")
-    setDisplay("0");
+    setCurval("0")
+    setInp1("0");
+   
+    setResult("0");
+    setDisplay("0")
+   
+    
  
     
   }
   const add=()=>{
     setOperator("+");
    
-    setInp1( parseInt(result));
+    setInp1( parseInt(curval));
    
-    // setDisplay(display+result+"+");
-    setResult("");
+    setDisplay(curval+"+");
+    setCurval("");
    
-   
+  
     
     
   }
@@ -83,27 +106,31 @@ export default function App() {
   const minus=()=>{
     setOperator("-");
    
-    setInp1( parseInt(result))
-    setResult("");
+    setInp1( parseInt(curval));
+   
+    setDisplay(curval+"-");
+    setCurval("");
    
   }
   const mult=()=>{
     setOperator("*");
    
-    setInp1( parseInt(result))
-    setResult("");
+    setInp1( parseInt(curval));
+   
+    setDisplay(curval+"*");
+    setCurval("");
    
   }
   const div=()=>{
     setOperator("/");
    
-    setInp1( parseInt(result))
-    setResult("");
+    setInp1( parseInt(curval));
+   
+    setDisplay(curval+"/");
+    setCurval("");
    
   }
- const att=()=>{
 
- }
 
   
   return ( 
@@ -112,23 +139,28 @@ export default function App() {
      <div className="maindiv">
              <div className="display">
                 <div className="subdsplay"> {display}</div>
-                 <input className="rslt" type="text" onChange={att}value={result} ></input>
+                 <input className="rslt"  value={result} ></input>
 
              </div>
  
 
        <div className="numbers">
-        
+        <div className="number">
         <div ><button className="buttons" onClick={one}>1</button><button className="buttons" onClick={two}>2</button><button className="buttons" onClick={three}>3</button></div>
         <div ><button className="buttons" onClick={four}>4</button><button className="buttons" onClick={five}>5</button><button className="buttons" onClick={six}>6</button></div>
         <div ><button className="buttons" onClick={seven}>7</button><button className="buttons" onClick={eight}>8</button><button className="buttons" onClick={nine}>9</button></div>
           
-          <div ><button className="buttons" onClick={add}>+</button><button className="buttons" onClick={zero}>0</button><button className="buttons"onClick={minus}>-</button></div>
-          <button className="buttons" onClick={displayresult}>=</button>
-          <button className="buttons" onClick={clear}>C</button>
-         {/* {console.log(result)} */}
-     
-       
+          <div ><button className="clear" onClick={clear}>C</button><button className="buttons" onClick={zero}>0</button>
+          <button className="equal"onClick={displayresult}>=</button></div>
+          
+          
+          </div>
+         {/* {console.log(`inp1 type`+typeof(inp1))}
+         {console.log(`inp1 value `+inp1)}
+         {console.log(`inp2 type`+typeof(inp2))}
+         {console.log(`inp2 value `+inp2)}
+      */}
+        <div className="symbol"> <button className="buttons" onClick={add}>+</button> <button className="buttons" onClick={minus}>-</button> <button className="buttons" onClick={mult}>*</button><button className="buttons" onClick={div}>/</button> </div>
   
          </div> 
 

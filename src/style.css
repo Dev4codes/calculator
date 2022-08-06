@@ -23,6 +23,7 @@ p {
 
 .numbers{
   margin-top: 2px;
+display: flex;
 height:74%;
 width: 95%;
   border-color: rgb(59, 122, 122);
@@ -34,7 +35,9 @@ width: 95%;
  
   color: rgb(38, 67, 236);
 
- font-size: 22px;
+ font-size: 40px;
+ margin-left: 5px;
+ width: 40px;
  
 }.subdsplay{
 
@@ -48,8 +51,28 @@ width: 95%;
 }
 
 .rslt{
-  width: 20%;
+  min-width: 20%;
   font-size: x-large;
   color: green;
+  max-width: 40%;
   
+}
+.symbol{
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.equal{
+  font-size: 20px;
+  width: 40px;
+ background-color:  rgb(65, 226, 65);
+  margin-left: 4px;
+  border-color: green;
+}
+.clear{
+  font-size: 20px;
+  width: 40px;
+ background-color:  rgb(233, 41, 41);
+  margin-left: 4px;
+  border-color: green;
 }
