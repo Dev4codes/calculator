@@ -4,7 +4,7 @@ import "./style.css";
 export default function App() {
   const [curval,setCurval]=useState("0");
   const [inp1,setInp1]=useState("");
-  const [display,setDisplay]=useState("0")
+  const [display,setDisplay]=useState("")
   const [result,setResult]=useState("");
  
   const [operator,setOperator]=useState();
@@ -84,7 +84,7 @@ export default function App() {
     setInp1("0");
    
     setResult("0");
-    setDisplay("0")
+    setDisplay("")
    
     
  
@@ -95,7 +95,7 @@ export default function App() {
    
     setInp1( parseInt(curval));
    
-    setDisplay(curval+"+");
+    setDisplay(parseInt(curval)+"+");
     setCurval("");
    
   
