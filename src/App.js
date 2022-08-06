@@ -108,7 +108,7 @@ export default function App() {
    
     setInp1( parseInt(curval));
    
-    setDisplay(curval+"-");
+    setDisplay(parseInt(curval)+"-");
     setCurval("");
    
   }
@@ -117,7 +117,7 @@ export default function App() {
    
     setInp1( parseInt(curval));
    
-    setDisplay(curval+"*");
+    setDisplay(parseInt(curval)+"*");
     setCurval("");
    
   }
@@ -126,7 +126,7 @@ export default function App() {
    
     setInp1( parseInt(curval));
    
-    setDisplay(curval+"/");
+    setDisplay(parseInt(curval)+"/");
     setCurval("");
    
   }

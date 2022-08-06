@@ -6,26 +6,30 @@ p {
 .maindiv{
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 260px;
   max-width: 200px;
-  border-color: aqua;
-  border: solid red 4px;
+ 
+  border: solid rgb(66, 118, 179) 4px;
+  border-radius: 2%;
+
 }
 
 .display{
   display: flex;
   height: 10%;
-  width: 95%;
+  width: 96%;
   justify-content: space-between;
   align-content: center;
   border: solid rgb(140, 140, 175) 4px;
 }
 
 .numbers{
+  
+ justify-self: center;
   margin-top: 2px;
 display: flex;
-height:74%;
-width: 95%;
+height:90%;
+width: 96%;
   border-color: rgb(59, 122, 122);
   border: solid rgb(99, 94, 94) 4px;
 }
